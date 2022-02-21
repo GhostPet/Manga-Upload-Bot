@@ -69,7 +69,8 @@ namespace Manga_Upload_Bot
 
             if (latestversion != this.version)
             {
-                MessageBox.Show("Yeni bir sürüm mevcut. \nCihazınızdaki sürüm: " + version + "\nGüncel sürüm: " + latestversion + "\nİndirme bağlantısı: https://github.com/GhostPet/MangaUploadBot/releases");
+                MessageBox.Show("Yeni bir sürüm mevcut. \nCihazınızdaki sürüm: v" + version + "\nGüncel sürüm: v" + latestversion);
+                System.Diagnostics.Process.Start("https://github.com/GhostPet/Manga-Upload-Bot/releases");
             }
             else
             {

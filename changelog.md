@@ -15,6 +15,7 @@
 	-	Dosya boyutu için resim optimizasyonu.
 	-	Çalýnmamasý için otomatik logo.
 	-	Uzun sayfalar olmamasý için uzunluða göre otomatik kýrpma.
+-	Artýk bir güncelleme olduðunda sizi otomatik olarak ilgili internet sitesine yönlendiriyor.
 -	Kapak ekleme kýsmýndaki sorunlar düzeltildi ve geliþtirildi.
 -	Arkaplandaki kod çorbasýnda iyileþtirmeler. (Ýyileþtirme dedim ama aslýnda büyük bölümü yeniden yazýldý.)
 
