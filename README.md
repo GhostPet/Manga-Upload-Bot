@@ -1,5 +1,5 @@
 
-#Turktoon Upload Bot
+# Turktoon Upload Bot
 
 Turktoon.com için yaptığım toplu manga yükleme botu.
 
