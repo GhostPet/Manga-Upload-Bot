@@ -4,6 +4,9 @@
 -	Klasör sürüklendiðinde aynýsý varsa listeye ekleme yapmamasý gerekiyor.
 -	Uploader class dosyasý çorba olmuþ.
 
+### v1.2.1:
+-	Kýrpma iþlemi sonrasý yükleme sýrasýnda oluþan sýralama hatasý düzeltildi.
+
 ### v1.2.0:
 
 -	Botun Ana Arayüzü Yenilendi!

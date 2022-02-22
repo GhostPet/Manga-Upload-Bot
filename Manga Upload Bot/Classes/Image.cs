@@ -81,9 +81,11 @@ namespace Manga_Upload_Bot
                 if (littleimgs.Count() != 1)
                 {
                     int counter = 0;
+                    int digits = (int)Math.Floor(Math.Log10(littleimgs.Count()) + 1);
                     foreach (IMagickImage littleimg in littleimgs)
                     {
-                        littleimg.Write(new FileInfo(basepath + filenum + " - " + ++counter + "." + filetype));
+                        counter++;
+                        littleimg.Write(new FileInfo(basepath + filenum + " - " + counter.ToString("D" + digits) + "." + filetype));
                     }
                     // and delete the old one.
                     File.Delete(img);

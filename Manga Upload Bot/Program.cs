@@ -15,7 +15,7 @@ namespace Manga_Upload_Bot
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Botu kendinize uyarlamak isterseniz buradakileri değiştirmeniz gerekebilir.
-            string version = "1.2.0";
+            string version = "1.2.1";
             string credentials = "turktoon-bot-333a3035d81b.json";
             string spreadsheetId = "1-71OojtQ3941aO203ZIYUMFAtAxsYoXSSPCxrvDsRpY";
             GoogleApi googleapi = new GoogleApi(version, credentials, spreadsheetId);
