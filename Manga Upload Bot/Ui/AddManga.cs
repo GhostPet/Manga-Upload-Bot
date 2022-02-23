@@ -6,13 +6,13 @@ using System.Windows.Forms;
 
 namespace Manga_Upload_Bot
 {
-    public partial class AddManga : Form
+    internal partial class AddManga : Form
     {
         GoogleApi GoogleApi;
         Driver driver;
         string mangaId;
 
-        public AddManga(Driver d, GoogleApi api)
+        internal AddManga(Driver d, GoogleApi api)
         {
             this.GoogleApi = api;
             this.driver = d;

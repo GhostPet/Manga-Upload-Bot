@@ -6,10 +6,10 @@ using System.Windows.Forms;
 
 namespace Manga_Upload_Bot
 {
-    public class Uploader
+    internal class Uploader
     {
 
-        public static string CoverUpload(Driver driver, string filepath)
+        internal static string CoverUpload(Driver driver, string filepath)
         {
             // Resim Yükleme Sayfasını Aç
             driver.GoToUrl("https://turktoon.com/wp-admin/media-new.php");
@@ -39,7 +39,7 @@ namespace Manga_Upload_Bot
             return "<img src=\"" + imglink + "\" alt = \"\" class=\"aligncenter size-full\" />";
         }
 
-        public static void Share(Driver driver,
+        internal static void Share(Driver driver,
                                  DataGridViewRowCollection chapters,
                                  System.ComponentModel.BackgroundWorker backgroundWorker,
                                  ref string proccess,

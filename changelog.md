@@ -1,8 +1,14 @@
 ### Yakýnda:
--	Bot sonraki sürümde ayarlarý kaydedebilecek.
 -	Kapak ve Logo dosya seçiminde format kontrolü yapmasý gerekiyor.
 -	Klasör sürüklendiðinde aynýsý varsa listeye ekleme yapmamasý gerekiyor.
 -	Uploader class dosyasý çorba olmuþ.
+
+### v1.2.2:
+-	Setup Dosyasý Ayarlandý!
+-	Giriþ arayüzüne "Beni Hatýrla" butonu eklendi.
+	**UYARI:** Giriþ bilgileriniz þifreleme olmadan bilgisayarýnýza kaydedilmektedir. Bilgisayarýnýza sýzan herkes bu bilgilere kolaylýkla eriþebilir.
+-	Ayarlarý artýk kaydedebilirsiniz (Logo dosyasýnýn konumunu da kaydedecektir).
+-	Ana arayüzdeki ayarlar kýsmýnda iyileþtirmeler yapýldý.
 
 ### v1.2.1:
 -	Kýrpma iþlemi sonrasý yükleme sýrasýnda oluþan sýralama hatasý düzeltildi.

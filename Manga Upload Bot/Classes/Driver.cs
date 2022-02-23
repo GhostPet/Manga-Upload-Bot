@@ -3,11 +3,11 @@ using OpenQA.Selenium.Chrome;
 
 namespace Manga_Upload_Bot
 {
-    public class Driver
+    internal class Driver
     {
         private ChromeDriver driver;
 
-        public Driver(bool hidden)
+        internal Driver(bool hidden)
         {
             ChromeOptions options = new ChromeOptions();
             if (hidden) options.AddArgument("headless");
@@ -17,41 +17,41 @@ namespace Manga_Upload_Bot
             this.driver = new ChromeDriver(service, options);
         }
 
-        public void GoToUrl(string Url)
+        internal void GoToUrl(string Url)
         {
             driver.Navigate().GoToUrl(Url);
         }
 
-        public string GetTitle()
+        internal string GetTitle()
         {
             return driver.Title;
         }
 
-        public void SendKeys(By by, string keys)
+        internal void SendKeys(By by, string keys)
         {
             driver.FindElement(by).SendKeys(keys);
         }
 
-        public void Click(By by)
+        internal void Click(By by)
         {
             driver.FindElement(by).Click();
         }
 
-        public void GetAttribute(By by, string attribute)
+        internal void GetAttribute(By by, string attribute)
         {
             driver.FindElement(by).GetAttribute(attribute);
         }
 
-        public IWebElement FindElement(By by)
+        internal IWebElement FindElement(By by)
         {
             return driver.FindElement(by);
         }
-        public System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> FindElements(By by)
+        internal System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> FindElements(By by)
         {
             return driver.FindElements(by);
         }
 
-        public void Exit()
+        internal void Exit()
         {
             driver.Close();
             driver.Quit();

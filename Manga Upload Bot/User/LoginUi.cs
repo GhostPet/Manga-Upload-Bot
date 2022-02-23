@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace Manga_Upload_Bot
 {
-    public partial class LoginUi : Form
+    internal partial class LoginUi : Form
     {
         User user;
-        public LoginUi(User u)
+        internal LoginUi(User u)
         {
             this.user = u;
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Manga_Upload_Bot
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            this.user.LogIn(textBox1.Text, textBox2.Text);
+            this.user.LogIn(textBox1.Text, textBox2.Text, checkBox1.Checked);
         }
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {

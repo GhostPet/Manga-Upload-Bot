@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Manga_Upload_Bot.Properties;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -6,21 +7,25 @@ using System.Windows.Forms;
 
 namespace Manga_Upload_Bot
 {
-    public partial class MainUi : Form
+    internal partial class MainUi : Form
     {
-        GoogleApi GoogleApi;
+        User User;
         Driver Driver;
+        GoogleApi GoogleApi;
+        Settings Settings;
         string proccess;
         string watermark;
 
-        public MainUi(Driver d, GoogleApi api)
+        internal MainUi(User u, Driver d, GoogleApi api, Settings s)
         {
+            InitializeComponent();
+            this.User = u;
             this.Driver = d;
             this.GoogleApi = api;
-            InitializeComponent();
+            this.Settings = s;
 
             GoogleApi.Checkforupdates(false);
-
+            LoadSettings();
             RefreshData();
         }
 
@@ -32,6 +37,7 @@ namespace Manga_Upload_Bot
         private void kullanıcıDeğiştirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+            User.LogOut();
             Application.Restart();
         }
         private void güncelleştirmeleriDenetleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -280,24 +286,25 @@ namespace Manga_Upload_Bot
         // Ayarları Açma-Kapama
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            numericUpDown1.Enabled = checkBox3.Enabled;
+            radioButton1.Enabled = checkBox3.Checked;
+            numericUpDown1.Enabled = checkBox3.Checked;
         }
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            button4.Enabled = checkBox2.Enabled;
-            numericUpDown2.Enabled = checkBox2.Enabled;
-            trackBar1.Enabled = checkBox2.Enabled;
+            button4.Enabled = checkBox2.Checked;
+            numericUpDown2.Enabled = checkBox2.Checked;
+            trackBar1.Enabled = checkBox2.Checked;
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            numericUpDown3.Enabled = checkBox1.Enabled;
-            trackBar2.Enabled = checkBox1.Enabled;
+            numericUpDown3.Enabled = checkBox1.Checked;
+            trackBar2.Enabled = checkBox1.Checked;
         }
 
         // Logo için Dosya Seçimi
         private void button4_Click(object sender, EventArgs e)
         {
-            if (this.watermark == null)
+            if (this.watermark != "" || this.watermark != null)
             {
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
@@ -332,6 +339,27 @@ namespace Manga_Upload_Bot
             numericUpDown2.Value = trackBar1.Value;
         }
 
+        // Ayarları Yükle
+        public void LoadSettings()
+        {
+            // Optimize
+            checkBox1.Checked = Settings.checkbox1;
+            numericUpDown3.Value = Settings.numericUpDown3;
+            trackBar2.Value = Settings.numericUpDown3;
+
+            // Logo:
+            checkBox2.Checked = Settings.checkbox2;
+            this.watermark = Settings.watermark;
+            if (this.watermark != "" || this.watermark != null) button4.Text = "Temizle";
+            else button4.Text = "Dosya Seç";
+            numericUpDown2.Value = Settings.numericUpDown2;
+            trackBar1.Value = Settings.numericUpDown2;
+
+            // Kırpma:
+            checkBox3.Checked = Settings.checkbox3;
+            numericUpDown1.Value = Settings.numericUpDown1;
+            numericUpDown4.Value = Settings.numericUpDown4;
+        }
         // Ayarları Sıfırla
         private void button5_Click(object sender, EventArgs e)
         {
@@ -351,7 +379,19 @@ namespace Manga_Upload_Bot
             checkBox3.Checked = true;
             numericUpDown1.Value = 5000;
             numericUpDown4.Value = 3;
-
+        }
+        // Ayarları Kaydet
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Settings.checkbox1 = checkBox1.Checked;
+            Settings.checkbox2 = checkBox2.Checked;
+            Settings.checkbox3 = checkBox3.Checked;
+            Settings.numericUpDown1 = (int)numericUpDown1.Value;
+            Settings.numericUpDown2 = (int)numericUpDown2.Value;
+            Settings.numericUpDown3 = (int)numericUpDown3.Value;
+            Settings.numericUpDown4 = (int)numericUpDown4.Value;
+            Settings.watermark = this.watermark;
+            Settings.Save();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Manga_Upload_Bot
 {
     internal class Image
     {
-        public static bool CheckImageNames(string filepath)
+        internal static bool CheckImageNames(string filepath)
         {
             String[] imgdirs = Directory.GetFiles(filepath);
 
@@ -56,7 +56,7 @@ namespace Manga_Upload_Bot
             return true;
         }
 
-        public static bool CropImages(string filepath, int height)
+        internal static bool CropImages(string filepath, int height)
         {
             string[] imgdirs = Directory.GetFiles(filepath);
             foreach (string img in imgdirs)
@@ -94,7 +94,7 @@ namespace Manga_Upload_Bot
             return true;
         }
 
-        public static bool WatermarkImages(string filepath, string watermark, int percentage = 40)
+        internal static bool WatermarkImages(string filepath, string watermark, int percentage = 40)
         {
             string[] imgdirs = Directory.GetFiles(filepath);
             foreach (string img in imgdirs)
@@ -120,7 +120,7 @@ namespace Manga_Upload_Bot
             return true;
         }
 
-        public static bool OptimizeImages(string filepath, int quality)
+        internal static bool OptimizeImages(string filepath, int quality)
         {
             string[] imgdirs = Directory.GetFiles(filepath);
             foreach (string img in imgdirs)

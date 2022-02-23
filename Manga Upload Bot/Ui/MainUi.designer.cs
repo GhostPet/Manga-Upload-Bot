@@ -749,14 +749,13 @@
             // 
             // button6
             // 
-            this.button6.Enabled = false;
             this.button6.Location = new System.Drawing.Point(597, 512);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(91, 21);
             this.button6.TabIndex = 11;
             this.button6.Text = "Ayarları Kaydet";
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button2_Click);
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // MainUi
             // 

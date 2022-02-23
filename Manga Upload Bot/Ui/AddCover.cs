@@ -5,14 +5,14 @@ using System.Windows.Forms;
 
 namespace Manga_Upload_Bot
 {
-    public partial class AddCover : Form
+    internal partial class AddCover : Form
     {
         Driver driver;
         GoogleApi GoogleApi;
         string uploadfile;
         string outputcode;
 
-        public AddCover(Driver d, GoogleApi api, DataTable mangas)
+        internal AddCover(Driver d, GoogleApi api, DataTable mangas)
         {
             this.driver = d;
             this.GoogleApi = api;

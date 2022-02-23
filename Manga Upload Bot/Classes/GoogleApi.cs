@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Manga_Upload_Bot
 {
-    public class GoogleApi
+    internal class GoogleApi
     {
         public string version;
         private string credentials;
@@ -18,7 +18,7 @@ namespace Manga_Upload_Bot
         private string[] Scopes = { SheetsService.Scope.Spreadsheets };
         public bool IsCredentialExists = true;
 
-        public GoogleApi(string v, string c, string s)
+        internal GoogleApi(string v, string c, string s)
         {
             this.version = v;
             this.credentials = c;
@@ -44,14 +44,14 @@ namespace Manga_Upload_Bot
             });
         }
 
-        public IList<IList<Object>> GetData(string range)
+        internal IList<IList<Object>> GetData(string range)
         {
             SpreadsheetsResource.ValuesResource.GetRequest request = this.service.Spreadsheets.Values.Get(this.spreadsheetId, range);
             ValueRange response = request.Execute();
             return response.Values;
         }
 
-        public void SetData(IList<IList<object>> data, string range)
+        internal void SetData(IList<IList<object>> data, string range)
         {
             ValueRange valueRange = new ValueRange();
             valueRange.Values = data;
@@ -60,7 +60,7 @@ namespace Manga_Upload_Bot
             request.Execute();
         }
 
-        public void Checkforupdates(bool show)
+        internal void Checkforupdates(bool show)
         {
             String range = "usage!C2:C2";
             SpreadsheetsResource.ValuesResource.GetRequest request = this.service.Spreadsheets.Values.Get(this.spreadsheetId, range);
