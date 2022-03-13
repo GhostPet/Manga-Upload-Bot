@@ -3,6 +3,9 @@
 -	Klasör sürüklendiðinde aynýsý varsa listeye ekleme yapmamasý gerekiyor.
 -	Uploader class dosyasý çorba olmuþ.
 
+### v1.2.2.1:
+-	ChromeDriver sürümü güncellendi (98 -> 99)
+
 ### v1.2.2:
 -	Setup Dosyasý Ayarlandý!
 -	Giriþ arayüzüne "Beni Hatýrla" butonu eklendi.
