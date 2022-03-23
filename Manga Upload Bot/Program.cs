@@ -22,7 +22,7 @@ namespace Manga_Upload_Bot
             if (!googleapi.IsCredentialExists) return;
 
             Properties.Settings settings = new Properties.Settings();
-            Driver driver = new Driver(false);
+            Driver driver = new Driver(true);
             User user = new User(driver, settings);
 
             user.LogIn();
