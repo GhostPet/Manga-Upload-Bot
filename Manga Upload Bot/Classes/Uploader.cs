@@ -196,9 +196,13 @@ namespace Manga_Upload_Bot
                 }
 
                 // Paylaş
+                System.Threading.Thread.Sleep(200);
                 backgroundWorker.ReportProgress((int)Math.Round((double)(startfrom + (max * (a + 0.96) / total))));
                 driver.Click(By.Name("publish"));
-                System.Threading.Thread.Sleep(200);
+
+                // Paylaşım tamamlanana kadar bekle.
+                driver.WaitForElementExist(By.ClassName("notice-success"));
+                System.Threading.Thread.Sleep(100);
 
                 a++;
             }
