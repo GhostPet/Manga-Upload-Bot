@@ -3,6 +3,9 @@
 -	Klasör sürüklendiðinde aynýsý varsa listeye ekleme yapmamasý gerekiyor.
 -	Uploader class dosyasý çorba olmuþ.
 
+### v1.2.4:
+-	ChromeDriver sürümü güncellendi (100 -> 102)
+
 ### v1.2.3:
 -	Bölüm yükleme sýrasýnda meydana gelen birkaç büyük problem düzeltildi.
 -	Bölüm paylaþma sýrasýnda meydana gelen birkaç küçük problem düzeltildi.

@@ -35,6 +35,12 @@ namespace Manga_Upload_Bot
         internal void RealLogIn(string UserName, string Password)
         {
             driver.GoToUrl("https://turktoon.com/wp-login.php");
+            if (driver.GetTitle() != "turktoon.com | 521: Web server is down")
+            {
+                System.Threading.Thread.Sleep(4000);
+                driver.GoToUrl("https://turktoon.com/wp-login.php");
+                System.Threading.Thread.Sleep(100);
+            }
             driver.SendKeys(By.Id("user_login"), UserName);
             driver.SendKeys(By.Id("user_pass"), Password);
             driver.Click(By.Id("wp-submit"));
