@@ -4,7 +4,7 @@
 -	Uploader class dosyasý çorba olmuþ.
 
 ### v1.2.4:
--	ChromeDriver sürümü güncellendi (100 -> 102)
+-	ChromeDriver sürümü güncellendi (100 -> 104)
 
 ### v1.2.3:
 -	Bölüm yükleme sýrasýnda meydana gelen birkaç büyük problem düzeltildi.
