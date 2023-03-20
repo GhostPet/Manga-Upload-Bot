@@ -30,8 +30,8 @@
     <ProductName>Manga Upload Bot</ProductName>
     <PublisherName>GhostPet</PublisherName>
     <SuiteName>Turktoon</SuiteName>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.2.4.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.2.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -62,7 +62,7 @@
     <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>5A6118F628D015DFE4B9232CE159A9EA85B1453D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A9472F2485ADB9C0BA6462DBE82AA9F54E3F4E51</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Manga Upload Bot_TemporaryKey.pfx</ManifestKeyFile>

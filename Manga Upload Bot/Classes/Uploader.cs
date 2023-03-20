@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Manga_Upload_Bot
@@ -27,7 +28,7 @@ namespace Manga_Upload_Bot
                 try
                 {
                     IWebElement pinkynail = row.FindElement(By.ClassName("pinkynail"));
-                    imglink = pinkynail.GetAttribute("src");
+                    imglink = Regex.Replace(pinkynail.GetAttribute("src"), @"-\d+x\d+", "");
                     break;
                 }
                 catch
@@ -161,7 +162,7 @@ namespace Manga_Upload_Bot
                         }
                         catch
                         {
-                            System.Threading.Thread.Sleep(200);
+                            System.Threading.Thread.Sleep(150);
                         }
                     }
                     tempint++;
@@ -189,20 +190,20 @@ namespace Manga_Upload_Bot
                 int tempint2 = 0;
                 foreach (String imglink in imglinks)
                 {
-                    driver.FindElement(By.Id("content")).SendKeys("<img src=\"" + imglink + "\" alt = \"\" class=\"aligncenter size-full\" />" + OpenQA.Selenium.Keys.Enter + OpenQA.Selenium.Keys.Enter);
+                    driver.FindElement(By.Id("content")).SendKeys("<img src=\"" + Regex.Replace(imglink, @"-\d+x\d+", "") + "\" alt = \"\" class=\"aligncenter size-full\" />" + OpenQA.Selenium.Keys.Enter + OpenQA.Selenium.Keys.Enter);
                     tempint++;
                     double temppercent2 = tempint2 / imglinks.Count / 10;
                     backgroundWorker.ReportProgress((int)Math.Round((double)(startfrom + (max * (a + 0.85 + temppercent2) / total))));
                 }
 
                 // Paylaş
-                System.Threading.Thread.Sleep(200);
+                System.Threading.Thread.Sleep(100);
                 backgroundWorker.ReportProgress((int)Math.Round((double)(startfrom + (max * (a + 0.96) / total))));
                 driver.Click(By.Name("publish"));
 
                 // Paylaşım tamamlanana kadar bekle.
                 driver.WaitForElementExist(By.ClassName("notice-success"));
-                System.Threading.Thread.Sleep(100);
+                System.Threading.Thread.Sleep(10);
 
                 a++;
             }
